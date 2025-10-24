@@ -1,0 +1,45 @@
+# Django için .gitignore
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django migration dosyaları
+**/migrations/
+!**/migrations/__init__.py
+
+# Environment ve config dosyaları
+.env
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE/editor
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Loglar ve veri tabanları
+*.log
+db.sqlite3
+
+# Static ve media dosyaları
+staticfiles/
+static/
+media/
+
+# Paketleme
+dist/
+build/
+*.egg-info/
+.eggs/
+wheels/
+
+# OS / Misc
+.DS_Store
+Thumbs.db

@@ -1,0 +1,36 @@
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: pdf-scanner-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - backend-static:/app/staticfiles
+      - backend-media:/app/media
+    restart: unless-stopped
+    networks:
+      - pdf-scanner-network
+
+  frontend:
+    build:
+      context: ./pdf-scanner
+      dockerfile: Dockerfile
+    container_name: pdf-scanner-frontend
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - pdf-scanner-network
+
+volumes:
+  backend-static:
+  backend-media:
+
+networks:
+  pdf-scanner-network:
+    driver: bridge
+
