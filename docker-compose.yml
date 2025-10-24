@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: pdf-scanner-backend
     ports:
-      - "8000:8000"
+      - "8002:8000"
     volumes:
       - ./backend:/app
       - backend-static:/app/staticfiles
